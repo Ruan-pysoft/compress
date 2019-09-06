@@ -15,19 +15,20 @@ def str2jpg(s):
 #INPUT = os.path.dirname(os.path.realpath(__file__)) + '\\input\\'
 #OUTPUT = os.path.dirname(os.path.realpath(__file__)) + '\\output\\'
 
+#Function to compress images
 def compress():
-    global INPUT
-    global OUTPUT
-    DONE_SOUND = 'done.mp3'
+    global INPUT #The Input folder
+    global OUTPUT #The Outputfolder
+    DONE_SOUND = 'done.mp3' #The sound to be played when the image is done being compressed
 
-    log = f'\n{datetime.now().strftime("%d%m%Y %H:%M:%S")}:\n\n'
+    log = f'\n{datetime.now().strftime("%d%m%Y %H:%M:%S")}:\n\n' #The log file
 
     '''if len(sys.argv) > 0:
         playsound = sys.argv[-1]
     else:
         playsound = 'True' '''
 
-    playsound = 'False'
+    playsound = 'False' #Wether or not the "done" sound should be played
 
     for r, d, f in os.walk(INPUT):
         for file in f:
