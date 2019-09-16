@@ -93,7 +93,7 @@ content.grid_columnconfigure(2,weight=1)
 
 e1 = Entry(content)
 e2 = Entry(content)
-e1.insert(0, os.path.join('Documents/input/'))
+e1.insert(0, os.path.join('C:\\Users', os.getlogin(), 'Documents\\input'))
 e2.insert(0, os.path.join('C:\\Users', os.getlogin(), 'Pictures'))
 #e1.insert(0, os.path.dirname(os.path.realpath(__file__)) + '\\input\\')
 #e2.insert(0, os.path.dirname(os.path.realpath(__file__)) + '\\output\\')
