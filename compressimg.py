@@ -2,7 +2,7 @@ import sys, os
 import PIL.Image as Image
 from shutil import copyfile
 from tkinter.filedialog import askdirectory
-from tkinter import Tk, Label, Button, Entry
+from tkinter import Tk, Label, Button, Entry, Frame
 from datetime import datetime
 
 
@@ -83,31 +83,38 @@ def run():
         INPUT = os.path.join(e1.get())
         OUTPUT = os.path.join(e2.get())
         compress()
+	
+content = Frame(root)
+content.grid(column=0, row=0, sticky='EW')
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
+content.grid_columnconfigure(0,weight=1)
+content.grid_columnconfigure(2,weight=1)
 
-e1 = Entry(root)
-e2 = Entry(root)
+e1 = Entry(content)
+e2 = Entry(content)
 e1.insert(0, os.path.join('Documents/input/'))
 e2.insert(0, os.path.join('C:\\Users', os.getlogin(), 'Pictures'))
 #e1.insert(0, os.path.dirname(os.path.realpath(__file__)) + '\\input\\')
 #e2.insert(0, os.path.dirname(os.path.realpath(__file__)) + '\\output\\')
 
-e1.grid(column=0, row=1)
+e1.grid(column=0, row=1, sticky='EW')
 
-e2.grid(column=2, row=1)
+e2.grid(column=2, row=1, sticky='EW')
 
-input_btn = Button(root, text="Select an input folder", bg="cyan", command=def_in)
+input_btn = Button(content, text="Select an input folder", bg="cyan", command=def_in)
 input_btn.grid(column=0, row=0)
 
-_lbl0 = Label(root, text="        ")
+_lbl0 = Label(content, text="        ")
 _lbl0.grid(column=1, row=0)
 
-output_btn = Button(root, text="Select an output folder", bg="cyan", command=def_out)
+output_btn = Button(content, text="Select an output folder", bg="cyan", command=def_out)
 output_btn.grid(column=2, row=0)
 
-cancel_btn = Button(root, text="Exit", bg="red", command=cancel)
+cancel_btn = Button(content, text="Exit", bg="red", command=cancel)
 cancel_btn.grid(column=0, row=2)
 
-run_btn = Button(root, text="Compress", bg="green", command=run)
+run_btn = Button(content, text="Compress", bg="green", command=run)
 run_btn.grid(column=2, row=2)
 
 root.mainloop()
