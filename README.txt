@@ -8,3 +8,5 @@ INSTRUCTIONS FOR USE
 3. Now run "compresssimg.py"
 4. Choose input and output folders
 5. Click on the "Compress" button
+
+Atom Teletype Portal: atom://teletype/portal/1a0d197f-61ec-4bda-9366-056659bc9ff8
